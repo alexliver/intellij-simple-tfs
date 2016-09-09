@@ -1,0 +1,63 @@
+<idea-plugin version="2">
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Simple TFS Plugin</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+        Before use, add the path of the folder containing your tf.exe file in system PATH environmental variable.
+        (e.g. C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE)
+    ]]></description>
+
+  <change-notes><![CDATA[
+  v1.0
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+      <!--
+    <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
+      <add-to-group group-id="MainMenu" anchor="last"  />
+      <action id="Myplugin.Textboxes" class="TFSAction" text="Text _Boxes" description="A test menu item" />
+    </group>
+    -->
+    <action id="TFSCheckoutAction" class="TFSCheckoutAction" text="TFS Checkout " description="TFSCheckoutAction">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl B"/>
+    </action>
+    <action id="TFSCheckinAction" class="TFSCheckinAction" text="TFS Check-in" description="TFSCheckinAction">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl C"/>
+    </action>
+    <action id="TFSAdd" class="TFSAdd" text="TFS add" description="TFSAdd">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    </action>
+      <!--
+    <action id="TFSUndo" class="TFSUndo" text="TFS Undo" description="TFSUndo">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+    -->
+    <action id="TFSHistory" class="TFSHistory" text="TFS History" description="TFSHistory">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
